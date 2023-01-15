@@ -18,7 +18,7 @@
     <span class="br">担当者より折り返しご連絡させていただきます。</span>
   </p>
 
-  <form action="{{asset('/SendContact')}}" method="post">
+  <form action="{{asset('/sendContact')}}" method="post">
     @csrf
     <div>
       <p>

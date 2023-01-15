@@ -9,6 +9,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ContactListController;
+use App\Http\Controllers\ContactDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +27,19 @@ Route::get('/', function () {
     return view('contactForm');
 });
 
-Route::get('/SendContact', function () {
+// お問い合わせ登録用ルート
+Route::get('/sendContact', function () {
     return redirect('/');
 });
-Route::post('/SendContact', [ContactFormController::class, 'create']);
+Route::post('/sendContact', [ContactFormController::class, 'create']);
 
 // お礼画面のレイアウト調整用のルート、最終的には消す
 Route::get('/kari', function () {
     return view('/sendSuccessfully');
 });
+
+// お問い合わせ一覧用ルート
+Route::get('/contactList', [ContactListController::class, 'index']);
+
+// お問い合わせ詳細用ルート
+Route::get('/contactDetail', [ContactDetailController::class, 'index']);

@@ -15,8 +15,8 @@ use Illuminate\Database\Eloquent\Model;
 class contact extends Model
 {
     use HasFactory;
-    // 割り当て許可(全て許可)
-    protected $guarded = array('confirm-privacy');
+    // 割り当て許可(以下は登録時に入れないものを指定している)
+    protected $guarded = array('confirm-privacy', 'status');
 
     //DBのテーブル指定
     protected $table = 'contacts';

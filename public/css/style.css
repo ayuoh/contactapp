@@ -39,6 +39,14 @@ main {
   text-align: center;
 }
 
+table,
+th,
+td {
+  border: 1px solid var(--basic-letter-color);
+  border-collapse: collapse;
+  padding: 2px;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -57,6 +65,10 @@ textarea {
   color: #fff;
   font-size: 1.1em;
   margin: 0 auto;
+}
+
+a {
+  color: var(--basic-letter-color);
 }
 
 /* --header---------------- */
@@ -81,11 +93,19 @@ h1 {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.admin .h2>div {
+  background-color: rgba(35, 24, 21, 0.7);
+}
+
 h2 {
   font-family: 'Zen Maru Gothic', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   padding: 20px 5px 20px 30px;
+}
+
+.admin h2 {
+  color: #fff;
 }
 
 /* --footer---------------- */
@@ -216,4 +236,22 @@ textarea {
   background-color: var(--main-bg-color);
   color: var(--basic-letter-color);
   font-size: 1em;
+}
+
+/* --contactList---------------- */
+.contactList .wrapper {
+  padding: 45px 0;
+}
+
+.list-table {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.contact-content {
+  max-width: 20em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: underline;
 }
