@@ -1,6 +1,14 @@
 <?php
 
+/**
+ * プログラム名		：web.php
+ * プログラム説明	：contactappのルート情報を記載しているプログラム
+ * 作成日時			：2023/1/14
+ * 作成者			：大木
+ */
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +22,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contactForm');
+});
+
+Route::get('/SendContact', function () {
+    return redirect('/');
+});
+Route::post('/SendContact', [ContactFormController::class, 'create']);
+
+// お礼画面のレイアウト調整用のルート、最終的には消す
+Route::get('/kari', function () {
+    return view('/sendSuccessfully');
 });
