@@ -47,9 +47,9 @@ class ContactFormController extends Controller
         }
 
         // 入力されたデータを格納するモデルクラスを生成
-        $contact = new contact();
+        $contact = new Contact();
         // DBに登録
-        $contact->fill($form)->save();
+        $contact->insertContact($form);
 
         return view('/sendSuccessfully');
     }

@@ -17,7 +17,7 @@ class ContactListController extends Controller
     public function index(Request $request)
     {
         // contactsテーブルの中身を新しい日付順に全件取得
-        $contactList = contact::orderBy('contact_date', 'desc')->get();
+        $contactList = Contact::orderBy('contact_date', 'desc')->get();
         return view('contactList', ['contactList' => $contactList]);
     }
 }

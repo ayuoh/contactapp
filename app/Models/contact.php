@@ -12,7 +12,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class contact extends Model
+class Contact extends Model
 {
     use HasFactory;
     // 割り当て許可(以下は登録時に入れないものを指定している)
@@ -27,8 +27,13 @@ class contact extends Model
     const UPDATED_AT = 'contact_date';
 
     // 引数に渡されたisbnの該当データをDBから取得する関数
-    public function scopeSelectByContactId($query, $contactId)
+    public function SelectByContactId($contactId)
     {
-        return $query->where('contact_id', $contactId);
+        return Contact::where('contact_id', $contactId)->first();
+    }
+
+    public function insertContact($insertContact)
+    {
+        Contact::fill($insertContact)->save();
     }
 }
